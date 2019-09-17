@@ -1,0 +1,29 @@
+<div class="jumbotron jumbotron-fluid">
+  <h4 class="display-4 text-center"><img src ="/assets/img/u2.png" width="150px"></h4>
+  <div class="container">
+    <div class="row">
+        <div class ="col-md-10 offset-md-1">
+        <form #form ="ngForm" autocomplete="off" (submit)="onSubmitProgress(form)">
+            <input type="hidden" name ="id" #id="ngModel" [(ngModel)]="service.formData.id">
+            <div class ="form-group">
+                <label><strong>Add Your Comment</strong></label>
+                <input name ="comment" #comment="ngModel" [(ngModel)]="service.formData.comment" class="form-control" placeholder="Your Comment" required>
+                <div *ngIf="comment.invalid && comment.touched" class="validation-error">This field is required</div>
+            </div>
+            <label><strong>Add Your Progress</strong></label>
+            <div class="form-row">
+                <div class ="form-group col-md-4">
+                    <input name ="progress" #progress="ngModel" [(ngModel)]="service.formData.progress" class="form-control" placeholder="Ex -: 10%" required>
+                    <div *ngIf="progress.invalid && progress.touched" class="validation-error">This field is required</div>
+                </div>
+            </div>
+            <div class ="col-md-2 offset-md-1">
+                <div class ="form-group">
+                    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">Submit</button>
+                </div>
+            </div>
+        </form>
+           
+      </div>
+      </div>
+      </div>

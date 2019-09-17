@@ -1,0 +1,26 @@
+<h1 class="display-4 center" >Task Manager</h1>
+<form #form ="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name ="id" #id="ngModel" [(ngModel)]="service.formData.id">
+    <div class ="form-group">
+        <input name ="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Full Name" required>
+        <div *ngIf="fullName.invalid && fullName.touched" class="validation-error">This field is required</div>
+    </div>
+    <div class ="form-group">
+        <input name ="task" #task="ngModel" [(ngModel)]="service.formData.task" class="form-control" placeholder="Task" required>
+        <div *ngIf="task.invalid && task.touched" class="validation-error">This field is required</div>
+    </div>
+    <div class="form-row">
+        <div class ="form-group col-md-6">
+            <input name ="startingDate" #startingDate="ngModel" [(ngModel)]="service.formData.startingDate" class="form-control" placeholder="Starting Date" required>
+            <div *ngIf="startingDate.invalid && startingDate.touched" class="validation-error">This field is required</div>
+        </div>
+        <div class ="form-group col-md-6">
+            <input name ="endDate" #endDate="ngModel" [(ngModel)]="service.formData.endDate" class="form-control" placeholder="End Date">
+        </div>
+    </div>
+    <div class ="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">Submit</button>
+    </div>
+    
+</form>
+

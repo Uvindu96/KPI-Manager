@@ -1,0 +1,17 @@
+<table class ="table table-hover">
+  <thead>
+      <th>Name</th>
+      <th>Task</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tsk of list">
+    <td (click)="onEdit(tsk)">{{tsk.fullName}}</td>
+    <td (click)="onEdit(tsk)">{{tsk.task}}</td>
+    <td (click)="onEdit(tsk)">{{tsk.startingDate}}</td>
+    <td (click)="onEdit(tsk)">{{tsk.endDate}}</td>
+    <td><a class="btn text-danager" (click)="onDelete(tsk.id)"><i class="fa fa-trash"></i></a></td>
+  </tr>
+  </tbody>
+</table>

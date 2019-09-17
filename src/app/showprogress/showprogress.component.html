@@ -1,0 +1,18 @@
+
+<div class ="col-md-10 offset-md-1" >
+  <table class ="table table-hover">
+    <thead>
+        <th>comment</th>
+        <th>progress</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prg of list">
+      <td (click)="onEdit(prg)">{{prg.comment}}</td>
+      <td (click)="onEdit(prg)">{{prg.progress}}</td>
+      <td><a class="btn text-danager" (click)="onDelete(prg.id)"><i class="fa fa-trash"></i></a></td>
+    </tr>
+    </tbody>
+  </table>
+  
+      
+</div>
