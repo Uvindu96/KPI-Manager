@@ -3,6 +3,10 @@
     padding-top: 25px;
 }
 
+.display-4{
+    padding-top: 25px;
+}
+
 input.ng-touched.ng-invalid{
     border-color: red;
     
